@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<style>
+        img{
+            width: 320px;
+            max-width: 100%;
+;
+        }
+        article{
+            border: 1px solid black;
+            padding: 1rem;
+            width: 500px;
+            margin: auto;
+            margin-bottom: 20px;
+            
+        }
+        
+    </style>
+    <main>
+    <button>Actualizar Películas</button>
+    </main>
+<script>
+        fetch("http://localhost:1234/movies")
+        .then(res => res.json())
+        .then(movie=> {
+            const html = movie.map(movie=>{
+                return `<article data-id="${movie.id}">
+                    <h2>${movie.nombre}</h2>
+                    <img src="${movie.imagen}">
+                    <p>${movie.genero}</p>
+                    <button class="delete">Eliminar</button></article>
+                    `
+            }).join(" ")
+            document.querySelector("main").innerHTML = html;
+
+        }
+        )
+        document.querySelector("main").addEventListener("click", e=>{
+            if(e.target.classList.contains("delete")){
+                const id = e.target.parentElement.dataset.id;
+                fetch(`http://localhost:1234/movie/${id}`, {
+                    method: "DELETE"
+                }).then(res=> res.json())
+                .then(res=> {alert(`La película ${res} ha sido eliminada`);
+                    e.target.parentElement.remove();
+                    res
+                
+                })
+            }
+        })
+    
+</script>
+    
+</body>
+</html>

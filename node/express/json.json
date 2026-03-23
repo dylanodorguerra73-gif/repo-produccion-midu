@@ -1,0 +1,32 @@
+
+[
+  {
+    "id": "1",
+    "nombre": "Inception",
+    "imagen":"https://play-lh.googleusercontent.com/buKf27Hxendp3tLNpNtP3E-amP0o4yYV-SGKyS2u-Y3GdGRTyfNCIT5WAVs2OudOz6so5K1jtYdAUKI9nw8",
+    "genero": ["Ciencia ficción"],
+    "duracion": 148
+  },
+  {
+    "id": "2",
+    "nombre": "Titanic",
+    "imagen":"https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png",
+    "genero": ["Romance"],
+    "duracion": 195
+  },
+  {
+    "id" : "3",
+    "nombre": "The Dark Knight",
+    "genero": ["Acción"],
+    "imagen":"https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/The_Dark_Knight_%282008_film%29.jpg/250px-The_Dark_Knight_%282008_film%29.jpg",
+    "duracion": 152
+  },
+  {
+    "id": "4",
+    "nombre": "Coco",
+    "imagen":"https://lumiere-a.akamaihd.net/v1/images/p_coco_19736_fd5fa537.jpeg?region=0,0,540,810",
+    "genero": ["Animación"],
+    "duracion": 105
+  }
+]
+  
