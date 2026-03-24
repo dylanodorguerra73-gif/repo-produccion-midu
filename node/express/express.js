@@ -43,9 +43,10 @@ app.patch('/movie/:id', (req, res) => {
   data[movieIndex] = updateMovie
   res.json(updateMovie)
 })
+const PORT= process.env.PORT || 1234;
 
-app.listen('1234', () => {
-  console.log('servidor levantado en el puerto 1234')
+app.listen(PORT, () => {
+  console.log(`servidor levantado en el puerto ${PORT}`)
 }
 
 )
