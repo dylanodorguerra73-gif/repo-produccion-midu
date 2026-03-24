@@ -28,7 +28,7 @@
     <button>Actualizar Películas</button>
     </main>
 <script>
-        fetch("http://localhost:1234/movies")
+        fetch("/movies")
         .then(res => res.json())
         .then(movie=> {
             const html = movie.map(movie=>{
@@ -46,7 +46,7 @@
         document.querySelector("main").addEventListener("click", e=>{
             if(e.target.classList.contains("delete")){
                 const id = e.target.parentElement.dataset.id;
-                fetch(`http://localhost:1234/movie/${id}`, {
+                fetch(`/movie/${id}`, {
                     method: "DELETE"
                 }).then(res=> res.json())
                 .then(res=> {alert(`La película ${res} ha sido eliminada`);

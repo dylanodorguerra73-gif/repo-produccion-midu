@@ -1,7 +1,9 @@
 const express = require('express')
-const data = require('./json.json')
+const data = require('./node/movies/json.json')
 const app = express()
-const { validatePartialMovie } = require('./validate.js')
+const { validatePartialMovie } = require('./node/movies/validate.js')
+
+app.use(express.static("node/movies"))
 
 app.use(express.json())
 app.use((req, res, next) => {
@@ -43,7 +45,7 @@ app.patch('/movie/:id', (req, res) => {
   data[movieIndex] = updateMovie
   res.json(updateMovie)
 })
-const PORT= process.env.PORT || 1234;
+const PORT = process.env.PORT || 1234
 
 app.listen(PORT, () => {
   console.log(`servidor levantado en el puerto ${PORT}`)
